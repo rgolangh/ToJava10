@@ -12,6 +12,15 @@ class MyListener extends JavaBaseListener {
 
     @Override
     public void exitLocalVariableDeclaration(JavaParser.LocalVariableDeclarationContext ctx) {
-        rewriter.replace(ctx.type().start, "var");
+        JavaParser.TypeContext type = ctx.type();
+        rewriter.replace(type.start, "var");
+
+        // catch generic class declarations like Map<String, String>
+        if (type.classOrInterfaceType() != null && type.classOrInterfaceType().typeArguments() != null) {
+            // remove <type, type>
+            rewriter.delete(type.classOrInterfaceType().start, type.classOrInterfaceType().stop);
+            rewriter.insertBefore(type.start, "var");
+        }
+
     }
 }

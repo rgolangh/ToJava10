@@ -1,9 +1,10 @@
 # ToJava10
 
-Translate java source code to use jdk's 10 `var` keyword.
+## Translate java source code to use jdk's 10 _`var`_ keyword.
 
 Uses the venerable [ANTLR](www.antlr.org) for generating the parser and the listeners.
 
+## Build
 Build the jar or download from the releases(when available):
 ```
 mvn package
@@ -13,9 +14,11 @@ ls -la target/
 ToJava10-1.0-SNAPSHOT-jar-with-dependencies.jar
 ```
 
-Point it at some java class and see the magic:
-```
-java -jar ToJava10-1.0-SNAPSHOT-jar-with-dependencies.jar src/main/resources/Simple.java
+## Usage
+Point it at [some java class](src/main/resources/Simple.java) and see the magic:
+
+```java
+java -jar toJava10.jar src/main/resources/Simple.java
 
 /**
  * A simple java class with 2 local variables declaration in the constructor.

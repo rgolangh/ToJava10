@@ -15,6 +15,6 @@ public class LocaVarTranslationTest {
         System.out.println(translatedText);
 
         Assert.assertTrue(translatedText.contains("var age = 1"));
-        Assert.assertTrue(translatedText.contains("var instance = new Simple()"));
+        Assert.assertTrue(translatedText.contains("var map = new ConcurrentHashMap<>()"));
     }
 }

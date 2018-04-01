@@ -56,6 +56,7 @@
                             <goal>single</goal>
                         </goals>
                         <configuration>
+                            <finalName>toJava10</finalName>
                             <archive>
                                 <manifest>
                                     <mainClass>Main</mainClass>
@@ -64,6 +65,7 @@
                             <descriptorRefs>
                                 <descriptorRef>jar-with-dependencies</descriptorRef>
                             </descriptorRefs>
+                            <appendAssemblyId>false</appendAssemblyId>
                         </configuration>
                     </execution>
                 </executions>

@@ -15,10 +15,10 @@ toJava10.jar
 ```
 
 ## Usage
-Point it at [some java class](src/main/resources/Simple.java) and see the magic:
+#### Point it at [some java class](src/main/resources/Simple.java), by default the change goes to stdout:
 
 ```java
-java -jar toJava10.jar src/main/resources/Simple.java
+java -jar target/toJava10.jar src/main/resources/Simple.java
 
 /**
  * A simple java class with 2 local variables declaration in the constructor.
@@ -34,4 +34,16 @@ public class Simple {
         var map = new ConcurrentHashMap<>();
     }
 }
+```
+
+#### Add `-i` to write the changes to the file _*in-place*_:
+
+```bash
+java -jar target/toJava10.jar -i src/main/resources/Simple.java
+```
+
+#### Convert your whole git repo:
+
+```bash
+git ls-files '*.java' | xargs -I '{}' java -jar target/toJava10.jar -i '{}'
 ```

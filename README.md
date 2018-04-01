@@ -11,7 +11,7 @@ mvn package
 
 ls -la target/
 ...
-ToJava10-1.0-SNAPSHOT-jar-with-dependencies.jar
+toJava10.jar
 ```
 
 ## Usage
@@ -31,7 +31,7 @@ public class Simple {
     public Simple() {
         // foo comment
         var age = 1;
-        var instance = new Simple();
+        var map = new ConcurrentHashMap<>();
     }
 }
 ```

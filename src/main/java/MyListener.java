@@ -2,7 +2,7 @@ import org.antlr.v4.runtime.BufferedTokenStream;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.TokenStreamRewriter;
 
-class MyListener extends JavaBaseListener {
+class MyListener extends JavaParserBaseListener {
 
     public TokenStreamRewriter rewriter;
 
@@ -12,7 +12,7 @@ class MyListener extends JavaBaseListener {
 
     @Override
     public void exitLocalVariableDeclaration(JavaParser.LocalVariableDeclarationContext ctx) {
-        JavaParser.TypeContext type = ctx.type();
+        JavaParser.TypeTypeContext type = ctx.typeType();
         rewriter.replace(type.start, "var");
 
         // catch generic class declarations like Map<String, String>
